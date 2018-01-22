@@ -21,8 +21,26 @@ RUN apt-get update && \
         mono-devel \
         sqlite3 \
         python \
+		python-dev \
+		python-pip \
+		build-essential \
+		git \
+		ffmpeg \
         openjdk-8-jre-headless \
         mediainfo && \
+		
+RUN pip install requests \
+    pip uninstall -y pyOpenSSL \
+    pip install pyOpenSSL \
+    pip install requests[security] \
+    pip install requests-cache \
+    pip install babelfish \
+    pip install "guessit<2" \
+    pip install "subliminal<2" \
+    pip uninstall -y stevedore \
+    pip install stevedore==1.19.1 \
+    pip install python-dateutil \
+    pip install qtfaststart \
 
 # install s6-overlay
     curl -s -o - -L "https://github.com/just-containers/s6-overlay/releases/download/v1.20.0.0/s6-overlay-amd64.tar.gz" | tar xzf - -C / && \

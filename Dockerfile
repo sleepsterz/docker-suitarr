@@ -1,5 +1,5 @@
 FROM ubuntu:17.10
-MAINTAINER hotio
+MAINTAINER sleepsterz
 
 ARG DEBIAN_FRONTEND=noninteractive
 ENV XDG_CONFIG_HOME="/config" XDG_DATA_HOME="/config"
